@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet"/>
+
+
+    <title>Singer Portfolio</title>  
+</head>
+
+<body data-booking-email="{{ booking_email }}">
+    <div id="introAnimation">
+        <div class="intro-content">
+            <div class="circle">
+        </div>
+            <img class="intro-logo" src="static/logo.jpeg"/>
+            <h1>SUJATA GURAV</h1>
+            <span>VOCAL SINGER</span>
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <h2><a href="#Home">🎙️ Sujata Vocalist</a></h2>
+
+        <div class="links">
+            <a href="#Home">Home</a>
+            <a href="#About">About</a>
+            <a href="#My-Albums-section">Albums</a>
+            <a href="#Gallery">Gallery</a>
+            <a href="#watch-my">Watch My</a>
+            <a href="#playlist">Music</a>
+            <a href="#Achievements">Achievements</a>
+            <a href="#Events-section">Events</a>
+            <a href="#Booking">Booking</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="menu-box">
+
+            <button class="menu" type="button" onclick="showMenu()" aria-expanded="false" aria-controls="menuList">☰</button>
+
+                <div class="menu-list" id="menuList">
+                    <a href="#Home">Home</a>
+                    <a href="#About">About</a>
+                    <a href="#My-Albums-section">Albums</a>
+                    <a href="#Gallery">Gallery</a>
+                    <a href="#watch-my">Watch My</a>
+                    <a href="#playlist">Music</a>
+                    <a href="#Achievements">Achievements</a>
+                    <a href="#Events-section">Events</a>
+                    <a href="#Booking">Booking</a>
+                    <a href="#contact">Contact</a>
+                </div>
+        </div>
+
+    </nav>
+
+
+    <!-- HOME -->
+     <style>
+    .Home {
+            height: 120vh;
+            background-image:
+                linear-gradient(90deg, rgba(45, 5, 70, .8),
+                rgba(90, 20, 120, .4)),
+                
+                url("static/image1.jpeg");
+
+            background-size: cover;
+            background-position: center;
+            
+
+            position: sticky;
+            color: white;
+        }
+        </style>
+
+    <section class="Home" id="Home">
+
+        <div class="content">
+
+            <p>WELCOME TO MY WORLD OF MUSIC 🎵</p>
+        
+            <h1 class="singer-name"><img class="home-logo" src="{{ url_for('static', filename='logo.jpeg') }}" alt="Sujata Gurav logo"> Vidushi Sujata</h1>
+
+            <h2>Vocalist • Performer • Music Lover</h2>
+
+            <p>
+                Music is my passion and performing is my way
+                of expressing emotions. Listen, feel and connect
+                with my journey through every note.
+            </p>
+
+            <div>
+                <button onclick="window.location.href='#My-Albums-section'">▶ LISTEN NOW</button>
+
+                <button onclick="window.location.href='#contact'">CONTACT ME</button>
+            </div>
+
+        </div>
+
+        <!-- FLOATING MUSIC -->
+
+        <div class="music-note">♪</div>
+        <div class="music-note note2">♫</div>
+
+  </section>
+  
+   <section class="stats-section">
+        <div class="stats-container" id="statsContainer">
+      <!-- Cards are generated with JavaScript -->
+    </div>
+    </section>
+
+    <style>
+    .stats-section {
+          background:#39104f;
+      width: 100%;
+      padding: 50px 15px 26px;
+    }
+  
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 24px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .stat-card {
+      min-height: 144px;
+      padding: 24px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      background: linear-gradient(
+        145deg,
+        rgba(39, 22, 43, 0.97),
+        rgba(35, 20, 34, 0.97)
+      );
+
+      border: 1px solid rgba(180, 135, 77, 0.25);
+      border-radius: 17px;
+
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 210, 100, 0.65);
+      box-shadow: 0 8px 28px rgba(255, 190, 70, 0.08);
+    }
+
+    .stat-number {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(36px, 4vw, 50px);
+      font-weight: 700;
+      line-height: 1.1;
+      color: #ffd65f;
+      margin-bottom: 12px;
+    }
+
+    .stat-label {
+      color: #c9bdcf;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.4;
+      letter-spacing: 0.15px;
+      text-transform: uppercase;
+    }
+
+    /* Tablet */
+    @media (max-width: 900px) {
+      .stats-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .stat-card {
+        min-height: 135px;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 480px) {
+      .stats-section {
+        padding: 12px;
+      }
+
+      .stats-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .stat-card {
+        min-height: 120px;
+        padding: 18px 8px;
+        border-radius: 13px;
+      }
+
+      .stat-number {
+        font-size: 34px;
+        margin-bottom: 9px;
+      }
+
+      .stat-label {
+        font-size: 10px;
+      }
+    }
+        
+  </style>
+  <script>
+     const stats = [
+      {
+        number: "Live",
+        suffix: "",
+        label: "Performances"
+      },
+      {
+        number: "Practice",
+        suffix: "",
+        label: "The foundation"
+      },
+      {
+        number: "Connect",
+        suffix: "",
+        label: "Through music"
+      },
+      {
+        number: "Grow",
+        suffix: "",
+        label: "Every day"
+      }
+    ];
+
+    const container = document.getElementById("statsContainer");
+
+    stats.forEach((stat) => {
+      const card = document.createElement("div");
+      card.className = "stat-card";
+
+      const number = document.createElement("div");
+      number.className = "stat-number";
+      number.textContent = `${stat.number}${stat.suffix}`;
+
+      const label = document.createElement("div");
+      label.className = "stat-label";
+      label.textContent = stat.label;
+
+      card.append(number, label);
+      container.appendChild(card);
+});
+  
+ </script>
+
+    <!--About-->
+    
+    <section class="About" id="About">
+        <div class="about-image">
+            <img src="static/about.jpeg"  alt="singer">
+        </div>
+        <div class="card">
+            <h2>About Sujata Gurav</h2>
+            <p>
+                I am a passionate singer who loves expressing emotions through music.
+                Singing is not just a talent for me; it is a way to connect with people
+                and share feelings through my voice.
+
+                I enjoy exploring different styles of music and 
+                continuously work on improving my singing skills. My goal is to create meaningful music,
+                perform confidently, and inspire others through my passion and dedication.
+
+                Music is an important part of my life, and I believe that every song has a story to tell.
+            </p>
+
+            <button onclick="exploremore()">Explore More</button>
+                  
+        </div>
+        
+       
+    </section>
+  
+    <!--Album-->
+
+   <section class="My-Albums-section" id="My-Albums-section">
+
+        <div class="My-Albums-container">
+
+            <h2 class="My-Albums-title">My Albums</h2>
+
+            <div class="My-Albums-grid">
+
+                <div class="My-Album-card">
+                    <h3>▶ Connect With My Music</h3>
+
+                    <p>
+                        Watch my songs, live performances and music videos.
+                        <br>
+                        <span>@ SujataGurav1</span>
+                    </p>
+
+                    <img src="static/gal7.jpeg" alt="Music">
+
+                    <a href="https://youtube.com/@sujatagurav1?si=FETMl-X2EHreeZgD" target="_blank">
+                        ▶ Watch on YouTube
+                    </a>
+                </div>
+
+
+                <div class="My-Album-card">
+                    <h3>🅾 My Social World</h3>
+
+                    <p>
+                        See my latest reels, photos and stage performances.
+                        <br>
+                        <span>@ sujata_gurav_kammar</span>
+                    </p>
+
+                    <img src="static/gal8.jpeg" alt="Instagram">
+
+                    <a href="https://www.instagram.com/sujata_gurav_kammar?stkn=MTh2bmI5d2VkZ2Fxag==" target="_blank">
+                        Follow on Instagram
+                    </a>
+                </div>
+
+
+                <div class="My-Album-card">
+                    <h3>ⓕ Follow My Melody</h3>
+
+                    <p>
+                        Follow me for latest music updates and events.
+                        <br>
+                        <span>@ Sujata Gurav Kammar</span>
+                    </p>
+
+                    <img src="static/gal9.jpeg" alt="Facebook">
+
+                    <a href="https://www.facebook.com/share/18PR69473y/" target="_blank">
+                        Follow on Facebook
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+ 
+    <!--Gallery-->
+
+    <section class="Gallery-section" id="Gallery">
+
+        <h2>My Gallery</h2>
+        <p class="Gallery-subtitle">A collection of my musical memories</p>
+
+        <div class="Gallery">
+
+            <div class="photo">
+                <img src="static/gal10.jpeg" alt="Performance">
+            </div>
+
+            <div class="photo">
+                <img src="static/gal12.jpeg" alt="Performance">
+            </div>
+
+            <div class="photo">
+                <img src="static/gal5.jpeg" alt="Performance">
+            </div>
+
+            <div class="photo">
+                <img src="static/gal6.jpeg" alt="Performance">
+            </div>
+
+            <div class="photo">
+                <img src="static/gal4.jpeg" alt="Performance">
+            </div>
+
+            <div class="photo">
+                <img src="static/gal3.jpeg" alt="Performance">
+            </div>
+
+            <div class="photo">
+                <img src="static/gal9.jpeg" alt="Performance">
+            </div>
+
+            <div class="photo">
+                <img src="static/gal11.jpeg" alt="Performance">
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="Achievements" id="Achievements">
+
+        <h2>My Achievements</h2>
+        <p class="subtitle">Milestones of my musical journey</p>
+
+        <div class="Achievement-container">
+
+            <div class="Achievement-card">
+            <h3>01 · Practice</h3>
+                <h3>Classical foundations</h3>
+                <p>A continuing focus on vocal practice, musicality, and expressive singing.</p>
+            </div>
+
+            <div class="Achievement-card">
+                <h3>02 · Performance</h3>
+                <h3>Live connection</h3>
+                <p>Sharing music with audiences through performances and cultural programs.</p>
+            </div>
+
+            <div class="Achievement-card">
+                <h3>03 · Exploration</h3>
+                <h3>A varied repertoire</h3>
+                <p>Exploring songs and styles that make room for emotion and tradition.</p>
+            </div>
+
+            <div class="Achievement-card">
+                <h3>04 · Growth</h3>
+                <h3>Always learning</h3>
+                <p>Every rehearsal and stage is another step in the musical journey.</p>
+            </div>
+
+        </div>
+        <br>
+        <br>
+
+        <a class="learn-btn" href="{{ url_for('learn') }}">Learn More</a>
+    
+    
+
+    </section>
+       
+    <!-- UPCOMING EVENTS -->
+
+<section class="Events-section" id="Events-section">
+
+    <h1 class="Events-title">UPCOMING EVENTS</h1>
+
+    <div class="Events-container">
+        <div class="Event-card"><h2>Madhur Swar</h2><div class="Event-info"><p>📍 Location: Dharwad</p><p>⏰ Time: 6:00 PM</p></div><button class="calendar-btn" onclick="bookEvent('Madhur Swar')">GET TICKET</button></div>
+        <div class="Event-card"><h2>Saptak Utsav</h2><div class="Event-info"><p>📍 Location: Hubli</p><p>⏰ Time: 7:00 PM</p></div><button class="calendar-btn" onclick="bookEvent('Saptak Utsav')">GET TICKET</button></div>
+        <div class="Event-card"><h2>Taal Tarang</h2><div class="Event-info"><p>📍 Location: Bengaluru</p><p>⏰ Time: 6:30 PM</p></div><button class="calendar-btn" onclick="bookEvent('Taal Tarang')">GET TICKET</button></div>
+        <div class="Event-card"><h2>Swar Dhara</h2><div class="Event-info"><p>📍 Location: Mysuru</p><p>⏰ Time: 8:00 PM</p></div><button class="calendar-btn" onclick="bookEvent('Swar Dhara')">GET TICKET</button></div>
+    </div>
+</section>
+
+<div id="eventForm" class="event-form"><div class="event-content">
+    <span onclick="closeForm()" class="close">×</span><h2>Event Booking</h2>
+    <form onsubmit="confirmBooking(event)">
+        <label>Event Name</label><input type="text" id="eventName" readonly>
+        <label>Your Name</label><input type="text" id="userName" placeholder="Enter your name" required>
+        <label>Email</label><input type="email" id="userEmail" placeholder="Enter your email" required>
+        <label>Number of Seats</label><input type="number" id="seats" placeholder="Enter number of seats" min="1" max="10" value="1" required>
+        <button type="submit">Submit</button>
+    </form>
+</div></div>
+
+    
+        
+
+    <!-- ==========================================================================
+         12. ARTIST JOURNEY & TIMELINE
+         ========================================================================== -->
+
+    <section class="journey-section" id="journey">
+    <!-- Timeline section container -->
+    <section class="section-padding">
+        <!-- Section header -->
+        <div class="section-header">
+            <span class="section-eyebrow">The Evolution</span>
+            <h2 class="section-title">The Artist's Journey</h2>
+            <p class="section-subtitle">A personal journey shaped by practice, performance, and a love of music.</p>
+        </div>
+
+        <!-- Vertical timeline tree -->
+        <div class="timeline-container">
+            <!-- Timeline Item 1 -->
+            <div class="timeline-item left">
+                <div class="timeline-node"></div>
+                <div class="timeline-card">
+                    <div class="timeline-year">A continuing practice</div>
+                    <h4 class="timeline-title">Musical Training & Roots</h4>
+                    <p class="timeline-desc">Building vocal foundations through regular practice and curiosity about music.</p>
+                </div>
+            </div>
+
+            <!-- Timeline Item 2 -->
+            <div class="timeline-item right">
+                <div class="timeline-node"></div>
+                <div class="timeline-card">
+                    <div class="timeline-year">Sharing music</div>
+                    <h4 class="timeline-title">First Stage Performances</h4>
+                    <p class="timeline-desc">Live performance brings songs to audiences and makes each event a shared experience.</p>
+                </div>
+            </div>
+
+            <!-- Timeline Item 3 -->
+            <div class="timeline-item left">
+                <div class="timeline-node"></div>
+                <div class="timeline-card">
+                    <div class="timeline-year">Finding expression</div>
+                    <h4 class="timeline-title">A voice with feeling</h4>
+                    <p class="timeline-desc">Exploring expressive phrasing and the feeling carried by each song.</p>
+                </div>
+            </div>
+
+            <!-- Timeline Item 4 -->
+            <div class="timeline-item right">
+                <div class="timeline-node"></div>
+                <div class="timeline-card">
+                    <div class="timeline-year">Looking ahead</div>
+                    <h4 class="timeline-title">Auditorium & Cultural Tours</h4>
+                    <p class="timeline-desc">Continuing to learn, perform, and connect with listeners through music.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+    
+
+    <!--Booking-->
+
+    <section class="booking-section" id="booking-section">
+
+        <div class="booking-heading">
+            <h2 id="Booking">Artist Booking</h2>
+            <p>Book the artist for your special evevts.</p>
+        </div>
+        
+        <!-- LEFT FORM -->
+        <div class="booking-box">
+            <h2>Book Sujata Gurav</h2>
+            <p>Complete the enquiry form below. We will contact you for further details.</p>
+
+            <form id="bookingForm">
+
+                <div class="row">
+                    <div class="input-group">
+                        <label>Your Name *</label>
+                        <input name="name" type="text" placeholder="Your name" autocomplete="name" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Your Email *</label>
+                        <input name="email" type="email" placeholder="Your email" autocomplete="email" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-group">
+                        <label>Contact Phone *</label>
+                        <input name="phone" type="tel" placeholder="+91" autocomplete="tel" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Event Type *</label>
+                        <select name="eventType" required>
+                            <option>Live Concert</option>
+                            <option>Wedding</option>
+                            <option>College Event</option>
+                            <option>Private Event</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-group">
+                        <label>Event Date *</label>
+                        <input name="eventDate" type="date" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Event Location / City *</label>
+                        <input name="venue" type="text" placeholder="Enter city / venue" required>
+                    </div>
+                </div>
+
+                <div class="input-group full">
+                    <label>Expected Audience Size</label>
+                    <input name="audience" type="number" min="1" placeholder="e.g. 500">
+                </div>
+
+                <div class="input-group full">
+                    <label>Event Details & Specific Song Request</label>
+                    <textarea name="requirements" placeholder="Tell us about your event..."></textarea>
+                </div>
+
+                <label>Event Time *</label><select name="eventTime" required><option value="">Choose a time</option><option>10:00 AM</option><option>1:00 PM</option><option>4:00 PM</option><option>7:00 PM</option></select>
+                <div class="calendar-widget"><label for="eventCalendar">Choose an event date</label><input id="eventCalendar" type="date" aria-label="Choose an event date"></div>
+                <p class="form-feedback" aria-live="polite"></p>
+                <button class="bk-button" type="submit">Send Booking Request</button>
+
+            </form>
+        </div>
+
+
+        <!-- RIGHT FORM -->
+        <div class="message-box">
+            <h2>Leave a Message</h2>
+            <p>Send a special word of encouragement or appreciation directly to the artist.</p>
+
+            <form id="messageForm">
+
+                <label>Your Name *</label>
+                <input name="name" type="text" placeholder="Your name" autocomplete="name" required>
+
+                <label>Your Email *</label>
+                <input name="email" type="email" placeholder="Your email" autocomplete="email" required>
+
+                <label>Your Message *</label>
+                <textarea name="message" placeholder="Write your message here..." required></textarea>
+
+                <p class="form-feedback" aria-live="polite"></p><button class="bk-button" type="submit">✉️ Send Message</button>
+
+            </form>
+        </div>
+    </section>
+
+    <!--contact-->
+
+    <section class="contact-section" id="contact">
+
+        <div class="contact-heading">
+
+            <p class="small-title">GET IN TOUCH</p>
+
+            <h2>CONTACT INFORMATION</h2>
+
+            <p class="description">
+                Reach out directly for performance bookings, concert invitations,
+                and press<br>
+                inquiries.
+            </p>
+
+        </div>
+
+
+        <!-- Contact Card -->
+
+        <div class="office-card">
+
+            <h2>SUJATA GURAV OFFICIAL OFFICE</h2>
+
+            <p class="office-description">
+                Available for live performances across India and worldwide.
+            </p>
+
+            <div class="contact-cards">
+
+            <!-- Email -->
+
+            <div class="contact-box">
+
+                <div class="icon">✉️</div>
+
+                    <p class="label">DIRECT EMAIL</p>
+
+                    <p class="value"><a href="mailto:{{ booking_email }}">{{ booking_email }}</a></p>
+
+                </div>
+
+                <!-- Phone -->
+
+                <div class="contact-box">
+
+                    <div class="icon">☎️</div>
+
+                    <p class="label">BOOKING LINE</p>
+
+                    <p class="value">+91 9060887575</p>
+
+                </div>
+
+                <!-- Location -->
+
+                <div class="contact-box">
+
+                    <div class="icon">📍</div>
+
+                    <p class="label">LOCATION</p>
+
+                    <p class="value">
+                        Dharwad
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--Footer-->
+
+    <section class="reels-section" id="watch-my">
+        <div class="section-header"><span class="section-eyebrow">Watch My</span><h2 class="section-title">Moments in Music</h2><p class="section-subtitle">Scroll through public performances from Sujata Gurav’s official YouTube channel.</p></div>
+        <div class="reel-player-card"><div class="reel-player-heading"><span>NOW PLAYING</span><strong id="reelNowPlaying">Shri bhavani maata ## devotional song #</strong></div><div class="reel-video"><iframe id="reelPlayer" src="https://www.youtube.com/embed/qci9Sj6FT2w?rel=0&amp;playsinline=1" title="Sujata Gurav — Shri bhavani maata devotional song" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>
+        <div class="reel-track" aria-label="Scroll through official channel videos">
+            <button class="reel-video-card video-select" type="button" data-video-id="qci9Sj6FT2w" data-video-title="Shri bhavani maata ## devotional song #" data-player-target="reelPlayer"><img src="https://i.ytimg.com/vi/qci9Sj6FT2w/hqdefault.jpg" alt="Thumbnail for Shri bhavani maata devotional song" loading="lazy"><span class="reel-play">▶</span><span class="reel-title">Shri bhavani maata · Devotional</span></button>
+            <button class="reel-video-card video-select" type="button" data-video-id="P7JhNU_xG08" data-video-title="Raag Madhuvanti | Sujata Gurav" data-player-target="reelPlayer"><img src="https://i.ytimg.com/vi/P7JhNU_xG08/hqdefault.jpg" alt="Thumbnail for Raag Madhuvanti by Sujata Gurav" loading="lazy"><span class="reel-play">▶</span><span class="reel-title">Raag Madhuvanti</span></button>
+            <button class="reel-video-card video-select" type="button" data-video-id="9A-MxlQW1mk" data-video-title="Raag Chayanat | Vidushi Sujata Gurav" data-player-target="reelPlayer"><img src="https://i.ytimg.com/vi/9A-MxlQW1mk/hqdefault.jpg" alt="Thumbnail for Raag Chayanat by Sujata Gurav" loading="lazy"><span class="reel-play">▶</span><span class="reel-title">Raag Chayanat</span></button>
+            <button class="reel-video-card video-select" type="button" data-video-id="cnPO1Sn7fyw" data-video-title="Raag Yaman by Vidushi Smt Sujata Gurav" data-player-target="reelPlayer"><img src="https://i.ytimg.com/vi/cnPO1Sn7fyw/hqdefault.jpg" alt="Thumbnail for Raag Yaman by Sujata Gurav" loading="lazy"><span class="reel-play">▶</span><span class="reel-title">Raag Yaman</span></button>
+            <button class="reel-video-card video-select" type="button" data-video-id="CxSbATcJpWs" data-video-title="Raag Gavati | Sujata Gurav" data-player-target="reelPlayer"><img src="https://i.ytimg.com/vi/CxSbATcJpWs/hqdefault.jpg" alt="Thumbnail for Raag Gavati by Sujata Gurav" loading="lazy"><span class="reel-play">▶</span><span class="reel-title">Raag Gavati</span></button>
+            <button class="reel-video-card video-select" type="button" data-video-id="btzVlW5A8nU" data-video-title="Dadra Thumri | Vidushi Sujata Gurav" data-player-target="reelPlayer"><img src="https://i.ytimg.com/vi/btzVlW5A8nU/hqdefault.jpg" alt="Thumbnail for Dadra Thumri by Sujata Gurav" loading="lazy"><span class="reel-play">▶</span><span class="reel-title">Dadra Thumri</span></button>
+            <button class="reel-video-card video-select" type="button" data-video-id="Dr-TAPrZEoU" data-video-title="Vidushi Sujata Gurav — Bheeni Bheeni Bhor" data-player-target="reelPlayer"><img src="https://i.ytimg.com/vi/Dr-TAPrZEoU/hqdefault.jpg" alt="Thumbnail for Bheeni Bheeni Bhor by Sujata Gurav" loading="lazy"><span class="reel-play">▶</span><span class="reel-title">Bheeni Bheeni Bhor</span></button>
+            <button class="reel-video-card video-select" type="button" data-video-id="J4RmXKo-O7k" data-video-title="Aa gida Ee gida | Vidushi Sujata Gurav" data-player-target="reelPlayer"><img src="https://i.ytimg.com/vi/J4RmXKo-O7k/hqdefault.jpg" alt="Thumbnail for Aa gida Ee gida by Sujata Gurav" loading="lazy"><span class="reel-play">▶</span><span class="reel-title">Aa gida Ee gida</span></button>
+        </div>
+        <p class="channel-fallback"><a href="https://www.youtube.com/@sujatagurav1" target="_blank" rel="noopener">View the official YouTube channel ↗</a></p>
+    </section>
+
+    <section class="playlist-section" id="playlist">
+        <div class="section-header"><span class="section-eyebrow">Listen</span><h2 class="section-title">Music & Performances</h2><p class="section-subtitle">Play recordings and performances directly from the official channel.</p></div>
+        <div class="playlist-frame"><div class="playlist-feature"><div class="playlist-copy"><span class="section-eyebrow">FEATURED PERFORMANCE</span><h3 id="musicNowPlaying">Raag Madhuvanti | Sujata Gurav</h3><p>Official video from Sujata Gurav’s YouTube channel.</p><a href="https://www.youtube.com/@sujatagurav1" target="_blank" rel="noopener">Visit the official channel ↗</a></div><div class="playlist-player"><iframe id="musicPlayer" src="https://www.youtube.com/embed/P7JhNU_xG08?rel=0&amp;playsinline=1" title="Raag Madhuvanti — Sujata Gurav" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>
+            <div class="music-track" aria-label="Select an official music video">
+                <button class="music-video-card video-select" type="button" data-video-id="P7JhNU_xG08" data-video-title="Raag Madhuvanti | Sujata Gurav" data-player-target="musicPlayer"><img src="https://i.ytimg.com/vi/P7JhNU_xG08/mqdefault.jpg" alt="Raag Madhuvanti video thumbnail" loading="lazy"><span>▶</span><b>Raag Madhuvanti</b></button>
+                <button class="music-video-card video-select" type="button" data-video-id="9A-MxlQW1mk" data-video-title="Raag Chayanat | Vidushi Sujata Gurav" data-player-target="musicPlayer"><img src="https://i.ytimg.com/vi/9A-MxlQW1mk/mqdefault.jpg" alt="Raag Chayanat video thumbnail" loading="lazy"><span>▶</span><b>Raag Chayanat</b></button>
+                <button class="music-video-card video-select" type="button" data-video-id="cnPO1Sn7fyw" data-video-title="Raag Yaman by Vidushi Smt Sujata Gurav" data-player-target="musicPlayer"><img src="https://i.ytimg.com/vi/cnPO1Sn7fyw/mqdefault.jpg" alt="Raag Yaman video thumbnail" loading="lazy"><span>▶</span><b>Raag Yaman</b></button>
+                <button class="music-video-card video-select" type="button" data-video-id="btzVlW5A8nU" data-video-title="Dadra Thumri | Vidushi Sujata Gurav" data-player-target="musicPlayer"><img src="https://i.ytimg.com/vi/btzVlW5A8nU/mqdefault.jpg" alt="Dadra Thumri video thumbnail" loading="lazy"><span>▶</span><b>Dadra Thumri</b></button>
+            </div>
+        </div>
+    </section>
+
+    <div class="chat-widget"><button id="chatToggle" type="button" aria-label="Open artist assistant">♫</button><div class="chat-panel" id="chatPanel" hidden><div class="chat-head">Sujata’s Assistant <button type="button" id="chatClose" aria-label="Close">×</button></div><div id="chatMessages" class="chat-messages"><p>Hello! Ask about Sujata’s music, performances, or booking.</p><div class="suggestions"><button type="button">How can I book Sujata?</button><button type="button">Where can I listen?</button></div></div><form id="chatForm"><input id="chatInput" placeholder="Ask a question…" aria-label="Ask a question"><button>Send</button></form></div></div>
+
+    <footer>
+        
+        <h3>🎙️ Sujata Vocalist</h3>
+
+        <p>Music • Passion • Emotion</p>
+
+        <p>Sujata Vocalist.All Rights Reserved.</p>
+
+    </footer>
+
+      <button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Top</button>
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+
+</body>
+</html>

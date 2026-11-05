@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sujata Gurav | Classical & Contemporary Vocalist</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Elegant typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <main class="landing">
+
+        <!-- Decorative background -->
+        <div class="ambient ambient-one"></div>
+        <div class="ambient ambient-two"></div>
+
+        <section class="intro">
+
+            <!-- Circular music animation -->
+            <div class="logo-orbit">
+
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+
+                <div class="orbit-icons" aria-hidden="true">
+                    <span class="music-icon icon-one">♫</span>
+                    <span class="music-icon icon-two">🎧</span>
+                    <span class="music-icon icon-three">🎙</span>
+                    <span class="music-icon icon-four">💿</span>
+                    <span class="music-icon icon-five">🎸</span>
+                </div>
+
+                <div class="logo-container">
+                    <img
+                        src="{{ url_for('static', filename='logo.jpeg') }}"
+                        alt="Sujata Gurav logo"
+                        class="artist-logo"
+                    >
+                </div>
+
+            </div>
+
+            <!-- Artist name -->
+            <h1 class="artist-name">SUJATA GURAV</h1>
+
+            <p class="artist-subtitle">
+                CLASSICAL &amp; CONTEMPORARY VOCALIST
+            </p>
+
+            <!-- Enter website -->
+            <a href="/" class="enter-button">
+                <span>Enter Experience</span>
+                <span class="arrow">→</span>
+            </a>
+
+        </section>
+
+        <div class="bottom-glow"></div>
+
+    </main>
+
+</body>
+</html>
